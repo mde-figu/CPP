@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/07 15:52:25 by mde-figu          #+#    #+#              #
-#    Updated: 2022/02/08 14:20:37 by mde-figu         ###   ########.fr        #
+#    Updated: 2022/02/17 21:27:24 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,9 @@ NAME = megaphone
 
 all: $(NAME)
 
+clean:
+	rm -f $(NAME)
+
 fclean:
 	rm -f $(NAME)
 	rm -f *.o
@@ -24,3 +27,7 @@ fclean:
 
 $(NAME):
 	$(CC) $(FLAGS) $(FILE) -o $@
+
+re: fclean all
+
+.PHONY: all clean fclean re

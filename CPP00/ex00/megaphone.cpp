@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:53:32 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/07 21:31:45 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/17 21:26:05 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ char	*megaphone(char *str){
 int main(int argc, char** argv){
 	int i;
 
-	(void )argc;
+	if (argc == 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	for (i = 1; argv[i]; i++)
-		argv[i] = ::megaphone(argv[i]);
-
+		megaphone(argv[i]);
+	std::cout << std::endl;
 	return 0;
 }
