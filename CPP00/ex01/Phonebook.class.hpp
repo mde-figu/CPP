@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:54 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/18 11:47:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/18 14:18:34 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class Phonebook {
 
 	public :
+		Contact contactlist[8];
 		int listSize;
 		int actualIndex;
 		Phonebook(void);

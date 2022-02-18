@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/18 11:58:38 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/18 16:26:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ Phonebook::~Phonebook(void)
 void	Phonebook::add(void)
 {
 	//TODO: setters
+	this->contactlist[this->actualIndex].index = this->actualIndex + 1;
+	std::cout << "Insert contact's first name" << std::endl;
+	this->contactlist[this->actualIndex].setFirstName();
+
+	return ;
 }
 
 void	Phonebook::search(void)
