@@ -6,15 +6,20 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 09:14:20 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/18 16:25:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:34:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
+
+#include <iostream>
+#include <string>
+#include <sstream>
+
+#define SSTR( x ) static_cast< std::ostringstream & >( \
+		( std::ostringstream() << std::dec << x ) ).str()
 
 class Contact {
 	private:
@@ -26,7 +31,9 @@ class Contact {
 	public :
 		int index;
 		Contact();// constructor
-		void	setFirstName(void);
+		std::string		getIndex(void);
+		void		setFirstName(void);
+		std::string	getFirstName(void);
 };
 
 #endif

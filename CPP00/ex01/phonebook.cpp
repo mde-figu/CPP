@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/18 16:26:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:35:37 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,50 @@ Phonebook::~Phonebook(void)
 
 void	Phonebook::add(void)
 {
-	//TODO: setters
-	this->contactlist[this->actualIndex].index = this->actualIndex + 1;
+	//TODO: limit of 8, if above, rewritte
+	this->contactList[this->actualIndex].index = this->actualIndex + 1;
 	std::cout << "Insert contact's first name" << std::endl;
-	this->contactlist[this->actualIndex].setFirstName();
+	this->contactList[this->actualIndex].setFirstName();
+
+	return ;
+}
+
+void	Phonebook::printTableHeader(void)
+{
+	std::cout << std::setw(10);
+	std::cout << " Index " << "|";
+	std::cout << std::setw(10);
+	std::cout << "First name" << "|";
+	std::cout << std::setw(10);
+	std::cout << "Last name " << "|";
+	std::cout << std::setw(10);
+	std::cout << " Nickname " << "|"<< std::endl;
+	return ;
+}
+
+void	Phonebook::printTable(void)
+{
+	for (int i = 0; i <= this->listSize; i++)
+	{
+		std::cout << std::setw(10);
+		std::cout << this->contactList[i].getIndex() << "|";
+		std::cout << std::setw(10);
+		std::cout << this->contactList[i].getFirstName() << "|";
+	}
 
 	return ;
 }
 
 void	Phonebook::search(void)
 {
-	//TODO: getters
+	//TODO: if no contacts, msg.
+	if (this->contactList != 0)
+	{
+		this->printTableHeader();
+		this->printTable();
+	}
+	
+	return ;
 }
 
 std::string Phonebook::handler(void)
