@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/17 21:48:30 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/18 11:58:38 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,50 @@ void splash(void)
 	return;
 }
 
+Phonebook::Phonebook(void)
+{
+	this->listSize = 0;
+	this->actualIndex = 0;
+}
+
+Phonebook::~Phonebook(void)
+{
+	std::cout << "cabô";
+}
+
+void	Phonebook::add(void)
+{
+	//TODO: setters
+}
+
+void	Phonebook::search(void)
+{
+	//TODO: getters
+}
+
+std::string Phonebook::handler(void)
+{
+	std::string action;
+
+	action = "";
+	while (action != "EXIT")
+	{
+		std::getline(std::cin, action);
+		if (action == "ADD")
+			this->add();
+		if (action == "SEARCH")
+			this->search();
+	}
+
+	return "bye";
+}
+
 int	main(void)
 {
+	Phonebook phonebook;
+	std::string handler;
 	::splash();
+	phonebook.handler();
 	
 
 	return (0); 
