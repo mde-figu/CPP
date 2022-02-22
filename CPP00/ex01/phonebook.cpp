@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/18 19:40:57 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:30:40 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void splash(void)
 {
-	std::cout << "---------------------" << std::endl;
-	std::cout << "=     PhoneBook     =" << std::endl;
-	std::cout << "---------------------" << std::endl;
-	std::cout << "     You may use:    " << std::endl;
-	std::cout << " ADD / SEARCH / EXIT " << std::endl;
+	std::cout << "--------------------------------------" << std::endl;
+	std::cout << "=              PhoneBook             =" << std::endl;
+	std::cout << "--------------------------------------" << std::endl;
+	std::cout << "              You may use:            " << std::endl;
+	std::cout << "          ADD / SEARCH / EXIT         " << std::endl;
 
 	return;
 }
@@ -36,7 +36,16 @@ void	Phonebook::add(void)
 	this->contactList[this->actualIndex].index = this->actualIndex + 1;
 	std::cout << "Insert contact's first name" << std::endl;
 	this->contactList[this->actualIndex].setFirstName();
+	std::cout << "Insert contact's last name" << std::endl;
+	this->contactList[this->actualIndex].setLastName();
+	std::cout << "Insert contact's nickname" << std::endl;
+	this->contactList[this->actualIndex].setNickName();
 
+	std::cout << "Insert contact's darkest secret" << std::endl;
+	this->contactList[this->actualIndex].setSecret();
+
+
+	std::cout << "*Contact inserted successfully*";
 	return ;
 }
 
@@ -61,6 +70,10 @@ void	Phonebook::printTable(void)
 		std::cout << this->contactList[i].getIndex() << "|";
 		std::cout << std::setw(10);
 		std::cout << this->contactList[i].getFirstName() << "|";
+		std::cout << std::setw(10);
+		std::cout << this->contactList[i].getLastName() << "|";
+		std::cout << std::setw(10);
+		std::cout << this->contactList[i].getNickName() << "|";
 
 		std::cout << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 09:14:20 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 11:02:56 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:07:19 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Contact {
 		std::string secret;
 	public :
 		int index;
-		Contact();// constructor
-		std::string		getIndex(void);
+		Contact();
+		std::string	getIndex(void);
 		void		setFirstName(void);
 		std::string	getFirstName(void);
 		void		setLastName(void);
@@ -39,6 +39,7 @@ class Contact {
 		void		setNickName(void);
 		std::string	getNickName(void);
 
+		//TODO:phone methods
 		void		setSecret(void);
 		std::string	getSecret(void);
 };

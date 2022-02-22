@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 09:17:27 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 11:04:07 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:31:42 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
 
-Contact::Contact() {}
+Contact::Contact(): index(0) {}
 
 std::string	Contact::getIndex()
 {
