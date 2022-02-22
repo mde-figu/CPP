@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 14:33:08 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 15:03:02 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,19 @@ Phonebook::~Phonebook(void)
 void	Phonebook::add(void)
 {
 	//TODO: limit of 8, if above, rewritte
-	this->contactList[this->actualIndex].index = this->actualIndex + 1;
+	this->contactList[this->listSize % 8].index = this->listSize + 1;
 	std::cout << "Insert contact's first name" << std::endl;
-	this->contactList[this->actualIndex].setFirstName();
+	this->contactList[this->listSize % 8].setFirstName();
 	std::cout << "Insert contact's last name" << std::endl;
-	this->contactList[this->actualIndex].setLastName();
+	this->contactList[this->listSize % 8].setLastName();
 	std::cout << "Insert contact's nickname" << std::endl;
-	this->contactList[this->actualIndex].setNickName();
+	this->contactList[this->listSize % 8].setNickName();
 	std::cout << "Insert contact's phone number" << std::endl;
-	this->contactList[this->actualIndex].setPhone();
+	this->contactList[this->listSize % 8].setPhone();
 	std::cout << "Insert contact's darkest secret" << std::endl;
-	this->contactList[this->actualIndex].setSecret();
+	this->contactList[this->listSize % 8].setSecret();
 
-
+	this->listSize++;
 	std::cout << "*Contact inserted successfully*" << std::endl;
 	return ;
 }
@@ -105,6 +105,7 @@ void	Phonebook::printIndex(void)
 		std::cout << this->contactList[id].getPhone() << std::endl;
 		std::cout << this->contactList[id].getSecret() << std::endl;
 	}
+	return ;
 }
 
 void	Phonebook::search(void)
