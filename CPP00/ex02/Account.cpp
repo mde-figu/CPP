@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:45:37 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 08:28:43 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 08:52:44 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ Account::Account(int initial_deposit):
 	_totalAmount = _totalAmount + _amount;
 	}
 
-Account::~Account(void) {}
+Account::~Account(void)
+{
+	std::cout << "timestamp ";
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";amount:" << _amount;
+	std::cout << ";closed" << std::endl; // closed é status?
+}
 
 int	Account::getNbAccounts(void) {return 0;}
 
