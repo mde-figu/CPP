@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 11:44:31 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:58:20 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,21 @@ void	Phonebook::printTable(void)
 	return ;
 }
 
+void	Phonebook::printIndex(void)
+{
+	std::string entry;
+	std::cout << "Input index number for more information:" << std::endl;
+
+	entry = "";
+	while (entry == "")
+		std::getline(std::cin, entry);
+	if (entry == "EXIT")
+	{
+		this->~Phonebook();
+		exit(0);
+	}
+}
+
 void	Phonebook::search(void)
 {
 	//TODO: if no contacts, msg.
@@ -88,6 +103,7 @@ void	Phonebook::search(void)
 	{
 		this->printTableHeader();
 		this->printTable();
+		this->printIndex();
 	}
 	
 	return ;
