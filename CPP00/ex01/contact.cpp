@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 09:17:27 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 11:31:42 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:40:35 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,17 @@ void	Contact::setNickName()
 
 std::string Contact::getNickName() {return this->nickName;}
 
-//TODO: phone
+void	Contact::setPhone()
+{
+	std::string	entry;
+
+	entry = "";
+	while (entry == "")
+		std::getline(std::cin, entry);
+	this->phone = entry;
+}
+
+std::string	Contact::getPhone(){return SSTR(this->phone);}
 
 void	Contact::setSecret()
 {

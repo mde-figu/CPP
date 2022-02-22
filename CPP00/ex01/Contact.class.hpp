@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 09:14:20 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 11:07:19 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:36:38 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class Contact {
 		std::string	getLastName(void);
 		void		setNickName(void);
 		std::string	getNickName(void);
-
-		//TODO:phone methods
+		void		setPhone(void);
+		std::string	getPhone(void);
 		void		setSecret(void);
 		std::string	getSecret(void);
 };
