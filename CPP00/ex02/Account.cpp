@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:45:37 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 07:54:43 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 08:28:43 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int Account::getNbWithdrawals(void) {return 0;}
 
 void Account::displayAccountsInfos( void ) 
 {
+	std::cout << "timestamp ";
 	std::cout << "accounts:" << _nbAccounts;
 	std::cout << ";total:" << _totalAmount;
 	std::cout << ";deposits:" << _totalNbDeposits;
@@ -66,12 +67,27 @@ void	Account::makeDeposit( int deposit )
 	_amount = _amount + deposit;
 	std::cout << ";amount:" << _amount;
 	std::cout << ";nb_deposits:" << _nbDeposits << std::endl;
-	_totalAmount = _totalAmount + _amount;
+	_totalAmount = _totalAmount + deposit;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	(void )withdrawal;
+	std::cout << "timestamp ";
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";p_amount:" << _amount;
+	if ( withdrawal >= _amount)
+	{
+		std::cout << ";withdrawal:refused" << std::endl;
+		return false;
+	}
+	else
+	{
+		_amount = _amount - withdrawal;
+		_nbWithdrawals++;
+	}
+	std::cout << ";amount:" <<_amount;
+	std::cout << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+	_totalAmount = _totalAmount - withdrawal;
 	return true;
 }
 
