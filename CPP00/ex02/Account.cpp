@@ -6,12 +6,15 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:45:37 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 08:52:44 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 09:30:58 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
 
 int Account::_nbAccounts=0;
 int Account::_totalAmount=0;
@@ -101,13 +104,23 @@ int		Account::checkAmount( void ) const {return 0;}
 
 void	Account::displayStatus( void ) const
 {
-	std::cout << "timestamp ";
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";amount:" << _amount;
 	std::cout << ";deposits:" << _nbDeposits;
 	std::cout << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
-void	Account::_displayTimestamp( void ) {}
+void	Account::_displayTimestamp( void )
+{
+	time_t		timer;
+	struct tm	*epoch;
+
+	time(&timer);
+	epoch = localtime(&timer);
+	std::cout << "[";
+	std::cout << epoch->tm_year + 1900;
+	std::cout << "]";
+}
 
 
