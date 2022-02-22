@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:45:37 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 09:49:09 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 10:10:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,21 @@ Account::~Account(void)
 	std::cout << ";closed" << std::endl; // closed é status?
 }
 
-int	Account::getNbAccounts(void) {return 0;}
+int	Account::getNbAccounts(void) {return _nbAccounts;}
 
-int	Account::getTotalAmount(void) {return 0;}
+int	Account::getTotalAmount(void) {return _totalAmount;}
 
-int Account::getNbDeposits(void) {return 0;}
+int Account::getNbDeposits(void) {return _totalNbDeposits;}
 
-int Account::getNbWithdrawals(void) {return 0;}
+int Account::getNbWithdrawals(void) {return _totalNbWithdrawals;}
 
 void Account::displayAccountsInfos( void ) 
 {
 	_displayTimestamp();
-	std::cout << "accounts:" << _nbAccounts;
-	std::cout << ";total:" << _totalAmount;
-	std::cout << ";deposits:" << _totalNbDeposits;
-	std::cout << ";withdrawals:" << _totalNbWithdrawals << std::endl;
+	std::cout << "accounts:" << getNbAccounts();
+	std::cout << ";total:" << getTotalAmount();
+	std::cout << ";deposits:" << getNbDeposits();
+	std::cout << ";withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
 void	Account::makeDeposit( int deposit )
@@ -93,6 +93,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	{
 		_amount = _amount - withdrawal;
 		_nbWithdrawals++;
+		_totalNbWithdrawals++;
 	}
 	std::cout << ";amount:" <<_amount;
 	std::cout << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
