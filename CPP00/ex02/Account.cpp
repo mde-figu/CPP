@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:45:37 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 09:47:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 09:49:09 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Account::Account(int initial_deposit):
 	_amount(initial_deposit),
 	_nbDeposits(0),
 	_nbWithdrawals(0){
-		std::cout << "timestamp ";
+		_displayTimestamp();
 		std::cout << "index:" << _accountIndex;
 		std::cout << ";amount:" << _amount;
 		std::cout << ";created" << std::endl;
@@ -42,7 +42,7 @@ Account::Account(int initial_deposit):
 
 Account::~Account(void)
 {
-	std::cout << "timestamp ";
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";amount:" << _amount;
 	std::cout << ";closed" << std::endl; // closed é status?
@@ -58,7 +58,7 @@ int Account::getNbWithdrawals(void) {return 0;}
 
 void Account::displayAccountsInfos( void ) 
 {
-	std::cout << "timestamp ";
+	_displayTimestamp();
 	std::cout << "accounts:" << _nbAccounts;
 	std::cout << ";total:" << _totalAmount;
 	std::cout << ";deposits:" << _totalNbDeposits;
@@ -69,7 +69,7 @@ void	Account::makeDeposit( int deposit )
 {
 	_nbDeposits++;
 	_totalNbDeposits++;
-	std::cout << "timestamp ";
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";p_amount:" << _amount;
 	std::cout << ";deposits:" << deposit;
@@ -81,7 +81,7 @@ void	Account::makeDeposit( int deposit )
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	std::cout << "timestamp ";
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";p_amount:" << _amount;
 	if ( withdrawal >= _amount)
