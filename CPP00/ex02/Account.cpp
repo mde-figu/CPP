@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:45:37 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/21 20:44:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 07:54:43 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,15 @@ void Account::displayAccountsInfos( void )
 
 void	Account::makeDeposit( int deposit )
 {
+	_nbDeposits++;
+	_totalNbDeposits++;
+	std::cout << "timestamp ";
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";p_amount:" << _amount;
+	std::cout << ";deposits:" << deposit;
 	_amount = _amount + deposit;
+	std::cout << ";amount:" << _amount;
+	std::cout << ";nb_deposits:" << _nbDeposits << std::endl;
 	_totalAmount = _totalAmount + _amount;
 }
 
