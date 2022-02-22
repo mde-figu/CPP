@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 11:58:20 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 14:33:08 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,16 +83,27 @@ void	Phonebook::printTable(void)
 
 void	Phonebook::printIndex(void)
 {
+	int	id;
 	std::string entry;
 	std::cout << "Input index number for more information:" << std::endl;
 
 	entry = "";
 	while (entry == "")
 		std::getline(std::cin, entry);
+	std::istringstream(entry) >> id;
+	id = id -1;
 	if (entry == "EXIT")
 	{
 		this->~Phonebook();
 		exit(0);
+	}
+	else if ( id <= 0 || id >= 8)
+	{
+		std::cout << this->contactList[id].getFirstName() << std::endl;
+		std::cout << this->contactList[id].getLastName() << std::endl;
+		std::cout << this->contactList[id].getNickName() << std::endl;
+		std::cout << this->contactList[id].getPhone() << std::endl;
+		std::cout << this->contactList[id].getSecret() << std::endl;
 	}
 }
 
