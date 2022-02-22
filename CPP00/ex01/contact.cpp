@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 09:17:27 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/18 19:17:17 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:04:07 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,42 @@ void Contact::setFirstName()
 	this->firstName = entry;
 }
 
-std::string Contact::getFirstName()
+std::string Contact::getFirstName() {return this->firstName;}
+
+void	Contact::setLastName()
 {
-	return this->firstName;
+	std::string entry;
+
+	entry = "";
+	while (entry == "")
+		std::getline(std::cin, entry);
+	this->lastName = entry;
 }
+
+std::string Contact::getLastName() {return this->lastName;}
+
+void	Contact::setNickName()
+{
+	std::string entry;
+
+	entry = "";
+	while (entry == "")
+		std::getline(std::cin, entry);
+	this->nickName = entry;
+}
+
+std::string Contact::getNickName() {return this->nickName;}
+
+//TODO: phone
+
+void	Contact::setSecret()
+{
+	std::string entry;
+
+	entry = "";
+	while (entry == "")
+		std::getline(std::cin, entry);
+	this->secret = entry;
+}
+
+std::string Contact::getSecret() {return this->secret;}

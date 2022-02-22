@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 21:41:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/18 19:14:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:40:57 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void	Phonebook::printTable(void)
 
 		std::cout << std::endl;
 	}
-
 	return ;
 }
 

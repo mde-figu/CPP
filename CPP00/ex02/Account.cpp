@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:45:37 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 10:45:08 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 10:50:04 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Account::~Account(void)
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";amount:" << checkAmount();
-	std::cout << ";closed" << std::endl; // closed é status?
+	std::cout << ";closed" << std::endl;
 }
 
 int	Account::getNbAccounts(void) {return _nbAccounts;}
