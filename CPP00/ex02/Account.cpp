@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:45:37 by mde-figu          #+#    #+#             */
-/*   Updated: 2022/02/22 09:30:58 by mde-figu         ###   ########.fr       */
+/*   Updated: 2022/02/22 09:47:53 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,13 @@ void	Account::_displayTimestamp( void )
 	epoch = localtime(&timer);
 	std::cout << "[";
 	std::cout << epoch->tm_year + 1900;
+	std::cout << std::setfill ('0') << std::setw(2);
+	std::cout << epoch->tm_mon;
+	std::cout << epoch->tm_mday << "_";
+	std::cout << std::setfill ('0') << std::setw(2);
+	std::cout << epoch->tm_hour;
+	std::cout << epoch->tm_min;
+	std::cout << epoch->tm_sec;
 	std::cout << "]";
 }
 
